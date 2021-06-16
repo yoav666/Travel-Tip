@@ -25,15 +25,16 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
         })
 }
 
-function onClickMap(map) {
+function onClickMap() {
+    //  let map=gMap
     const myLatlng = {
         lat: 32.0749831,
         lng: 34.9120554
     };
-    map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 4,
-        center: myLatlng,
-    });
+    // map = new google.maps.Map(document.getElementById("map"), {
+    //     zoom: 4,
+    //     center: myLatlng,
+    // });
     // Create the initial InfoWindow.
     let infoWindow = new google.maps.InfoWindow({
         content: 'aaa',
