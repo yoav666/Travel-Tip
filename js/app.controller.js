@@ -4,6 +4,13 @@ import {
 import {
     mapService
 } from './services/map.service.js'
+import {
+    storageService
+} from './services/storage.service.js'
+
+// export const appContriller = {
+//     getUser
+// }
 
 window.onload = onInit;
 window.onAddMarker = onAddMarker;
@@ -13,8 +20,9 @@ window.onGetUserPos = onGetUserPos;
 
 function onInit() {
     mapService.initMap()
-        .then(() => {
+        .then(res => {
             // mapService.clickMap()
+            console.log('res', res);
             console.log('Map is ready');
         })
         .catch(() => console.log('Error: cannot init map'));
@@ -61,3 +69,15 @@ function onPanTo() {
     mapService.panTo(35.6895, 139.6917);
 }
 
+
+// getUser()
+render()
+
+function render() {
+    var obj = getObjData()
+    console.log(obj);
+}
+
+function getObjData() {
+    return storageService.load('user-data')
+}
