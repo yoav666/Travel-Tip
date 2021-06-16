@@ -9,8 +9,6 @@
 </head>
 
 <body>
-    <h1>bbb</h1>
-    <h2>blabla</h2>
     <h1>Travel-Tip Starter</h1>
     <div class="map" id="map" style="width: 400px; height: 400px;"></div>
     <button onclick="onAddMarker()" class="btn-add-marker">Add Marker Speific Location</button>
@@ -21,8 +19,15 @@
     <p>You are at: <span class="user-pos"></span></p>
     <p>Locations: <span class="locs"></span></p>
 
+
+
     <script src="lib/axios.js"></script>
     <script type="module" src="js/app.controller.js"></script>
+
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCauVw0aMOumoErJPhnJvrZjFOjZOgq1Fk&callback=initMap&libraries=&v=weekly"
+    async
+  ></script>
 </body>
 
 </html>
