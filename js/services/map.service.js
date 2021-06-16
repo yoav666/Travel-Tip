@@ -5,35 +5,32 @@ export const mapService = {
 }
 
 var gMap;
-//32.017136
-//34.745441
-//bat yam
 
-<<<<<<< HEAD
-// function initMap(lat = 32.0749831, lng = 34.9120554) {
-//     console.log('InitMap');
-//     // clickOnMap()
-//     return _connectGoogleApi()
-//         .then(() => {
-//             console.log('google available');
-//             gMap = new google.maps.Map(
-//                 document.querySelector('#map'), {
-//                     center: {
-//                         lat,
-//                         lng
-//                     },
-//                     zoom: 15
-//                 })
-//             console.log('Map!', gMap);
-//         })
-// }
+function initMap(lat = 32.0749831, lng = 34.9120554) {
+    console.log('InitMap');
+    // clickOnMap()
+    return _connectGoogleApi()
+        .then(() => {
+            console.log('google available');
+            gMap = new google.maps.Map(
+                document.querySelector('#map'), {
+                    center: {
+                        lat,
+                        lng
+                    },
+                    zoom: 15
+                })
+            onClickMap(gMap)
+            console.log('Map!', gMap);
+        })
+}
 
-function initMap() {
+function onClickMap(map) {
     const myLatlng = {
         lat: 32.0749831,
         lng: 34.9120554
     };
-    const map = new google.maps.Map(document.getElementById("map"), {
+    map = new google.maps.Map(document.getElementById("map"), {
         zoom: 4,
         center: myLatlng,
     });
@@ -56,20 +53,6 @@ function initMap() {
         );
         infoWindow.open(map);
     });
-=======
-function initMap(lat = 32.017136, lng = 34.745441) {
-    console.log('InitMap');
-    return _connectGoogleApi()
-        .then(() => {
-            console.log('google available');
-            gMap = new google.maps.Map(
-                document.querySelector('#map'), {
-                center: { lat, lng },
-                zoom: 15
-            })
-            console.log('Map!', gMap);
-        })
->>>>>>> 50e9464135f43f0696ac41806ca583d5ebb5df2e
 }
 
 function addMarker(loc) {
