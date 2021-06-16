@@ -25,6 +25,7 @@ function onInit() {
         .catch(() => console.log('Error: cannot init map'));
     }
 
+    
 // This function provides a Promise API to the callback-based-api of getCurrentPosition
 function getPosition() {
     console.log('Getting Pos');
@@ -65,4 +66,6 @@ function onPanTo() {
     console.log('Panning the Map');
     mapService.panTo(35.6895, 139.6917);
 }
+
+
 
