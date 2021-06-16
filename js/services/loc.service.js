@@ -7,7 +7,7 @@ import {
 
 
 export const locService = {
-    // getLocs,
+    getLocs,
     getLoc
     // getUser
 }
@@ -29,14 +29,13 @@ const locs = [{
     }
 ]
 
-// function getLocs(pos) {
-
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             resolve(locs);
-//         }, 2000)
-//     });
-// }
+function getLocs(pos) {
+    return new Promise((resolve, reject) => {
+        // setTimeout(() => {
+            resolve(locs);
+        // }, 2000)
+    });
+}
 
 function getLoc(loc) { // **
     createObj(loc)
