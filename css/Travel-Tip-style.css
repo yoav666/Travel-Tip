@@ -10,7 +10,6 @@ body {
     margin: 0;
     background-color: aqua;
 }
-<<<<<<< HEAD
 
 h1,
 h2,
@@ -19,14 +18,4 @@ h4,
 h5,
 h6 {
     margin: 0;
-=======
-h1,h2,h3,h4,h5,h6{
-    margin:0;
-}
-h1{
-    color:red
-}
-.btn-pan{
-    background-color: aqua;
->>>>>>> dae39f036e0ee6c17b338889d02eb598a7a7c2cd
 }
