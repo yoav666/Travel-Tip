@@ -7,8 +7,11 @@ export const mapService = {
 }
 
 var gMap;
+//32.017136
+//34.745441
+//bat yam
 
-function initMap(lat = 32.0749831, lng = 34.9120554) {
+function initMap(lat = 32.017136, lng = 34.745441) {
     console.log('InitMap');
     return _connectGoogleApi()
         .then(() => {
