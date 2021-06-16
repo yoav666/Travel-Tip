@@ -14,10 +14,11 @@ function getLocs() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(locs);
-            storageService.save(DATA_DB,locs);
         }, 2000)
     });
     
 }
 
 
+
+// storageService.save(DATA_DB,locs);
