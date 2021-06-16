@@ -24,7 +24,7 @@ window.onGetUserPos = onGetUserPos;
 
 function onInit() {
     mapService.initMap()
-        .then(res => {
+        .then(() => {
             // mapService.clickMap()
             console.log('res', res);
             // weatherService.getWeather()

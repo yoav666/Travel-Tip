@@ -57,6 +57,13 @@ function createObj(loc) { // **
     // getUser(pos)
     console.log(obj);
     storageService.save('user-data', obj)
+
+    // var obj={
+    //     time:Date.now(),
+    //     id:_makeId(),
+    //     lat:pospos['lat'],
+    //     lng:pospos['lng']
+    // }
 }
 
 function _makeId(length = 5) {
