@@ -5,9 +5,6 @@ export const mapService = {
 }
 
 var gMap;
-//32.017136
-//34.745441
-//bat yam
 
 function initMap(lat = 32.0749831, lng = 34.9120554) {
     console.log('InitMap');
@@ -23,8 +20,39 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
                     },
                     zoom: 15
                 })
+            onClickMap(gMap)
             console.log('Map!', gMap);
         })
+}
+
+function onClickMap(map) {
+    const myLatlng = {
+        lat: 32.0749831,
+        lng: 34.9120554
+    };
+    map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 4,
+        center: myLatlng,
+    });
+    // Create the initial InfoWindow.
+    let infoWindow = new google.maps.InfoWindow({
+        content: 'aaa',
+        position: myLatlng,
+    });
+    infoWindow.open(map);
+    // Configure the click listener.
+    map.addListener("click", (mapsMouseEvent) => {
+        // Close the current InfoWindow.
+        infoWindow.close();
+        // Create a new InfoWindow.
+        infoWindow = new google.maps.InfoWindow({
+            position: mapsMouseEvent.latLng,
+        });
+        infoWindow.setContent(
+            JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
+        );
+        infoWindow.open(map);
+    });
 }
 
 // function initMap() {
