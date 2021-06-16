@@ -11,9 +11,9 @@ import {
 // export const appContriller = {
 //     getUser
 // }
-import{
+import {
     weatherService
-}from './services/weather.service.js'
+} from './services/weather.service.js'
 
 
 window.onload = onInit;
@@ -24,14 +24,14 @@ window.onGetUserPos = onGetUserPos;
 
 function onInit() {
     mapService.initMap()
-        .then(res => {
-            // mapService.clickMap()
+        .then((res) => {
             console.log('res', res);
+            // mapService.clickMap()
             // weatherService.getWeather()
             console.log('Map is ready');
         })
         .catch(() => console.log('Error: cannot init map'));
-    }
+}
 
 // This function provides a Promise API to the callback-based-api of getCurrentPosition
 function getPosition() {
@@ -76,13 +76,12 @@ function onPanTo() {
 
 
 // getUser()
-render()
 
-function render() {
-    var obj = getObjData()
+function render(obj) {
     console.log(obj);
 }
 
 function getObjData() {
-    return storageService.load('user-data')
+    var obj = storageService.load('user-data')
+    render(obj)
 }
