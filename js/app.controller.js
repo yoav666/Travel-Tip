@@ -62,8 +62,8 @@ function onGetLocs() {
             // document.querySelector('.locs').innerText = JSON.stringify(locs)
         })
 }
-function onDelLoc() {
-    locService.delLoc()
+function onDelLoc(id) {
+    locService.delLoc(id)
 }
 
 function onGetUserPos() {
