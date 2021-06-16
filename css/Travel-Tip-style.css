@@ -30,7 +30,7 @@ header{
 header .header-container{
     max-width: 980px;
     margin-inline: auto;
-    margin-block-end:30px;
+    margin-block-end:2em;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,8 +55,8 @@ header .header-container h1>span{
     /* background-color: lightgray; */
     font-weight: 700;
     box-shadow: 3px .5px 8px .5px  rgb(255, 153, 0);
-    padding-inline:20px;
-    padding-block:10px;
+    padding-inline:1.2em;
+    padding-block:1em;
     border-radius: 2em;
 }
 input[name=search]{
