@@ -8,32 +8,23 @@ import {
 
 export const locService = {
     getLocs,
-    getLoc
+    getLoc,
+    delLoc
     // getUser
 }
 const DATA_DB = 'DATA_DB';
 
 
 
-    // {name: 'Greatplace', lat: 32.047104, lng: 34.832384 }, 
-    // {name: 'Neveragain', lat: 32.047201, lng: 34.832581 }
-const locs = [{
-        name: 'Greatplace',
-        lat: 32.047104,
-        lng: 34.832384
-    },
-    {
-        name: 'Neveragain',
-        lat: 32.047201,
-        lng: 34.832581
-    }
-]
+// {name: 'Greatplace', lat: 32.047104, lng: 34.832384 }, 
+// {name: 'Neveragain', lat: 32.047201, lng: 34.832581 }
+const locs = storageService.load(DATA_DB) || []
 
 function getLocs(pos) {
     return new Promise((resolve, reject) => {
-        // setTimeout(() => {
+        setTimeout(() => {
             resolve(locs);
-        // }, 2000)
+        }, 2000)
     });
 }
 
@@ -42,27 +33,29 @@ function getLoc(loc) { // **
 }
 
 function createObj(loc) { // **
-    var obj = {}
-    const time = Date.now()
-    // var pos = JSON.parse(loc)
-    
+    // var obj = {}
+    // const time = Date.now()
+    // // var pos = JSON.parse(loc)
+
     var pospos = JSON.parse(loc)
-    // console.log('pospos', pospos['lat']);
-    obj.posLat = pospos['lat']
-    obj.posLng = pospos['lng']
-    obj.timeNow = time
-    obj.id = _makeId()
+    // // console.log('pospos', pospos['lat']);
+    // obj.posLat = pospos['lat']
+    // obj.posLng = pospos['lng']
+    // obj.timeNow = time
+    // obj.id = _makeId()
 
-    // getUser(pos)
+    // // getUser(pos)
+
+    var obj = {
+        name: prompt('what is the name of this place?'),
+        time: Date.now(),
+        id: _makeId(),
+        lat: pospos['lat'],
+        lng: pospos['lng'],
+    }
     console.log(obj);
-    storageService.save('user-data', obj)
-
-    // var obj={
-    //     time:Date.now(),
-    //     id:_makeId(),
-    //     lat:pospos['lat'],
-    //     lng:pospos['lng']
-    // }
+    locs.push(obj)
+    storageService.save(DATA_DB, locs)
 }
 
 function _makeId(length = 5) {
@@ -82,3 +75,9 @@ function getUser(userDatas) {
 }
 
 // storageService.save(DATA_DB,locs);
+
+
+function delLoc(id){
+    console.log('hi im here',id)
+    // locs.findIndex(id)
+}

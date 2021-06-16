@@ -21,6 +21,8 @@ window.onAddMarker = onAddMarker;
 window.onPanTo = onPanTo;
 window.onGetLocs = onGetLocs;
 window.onGetUserPos = onGetUserPos;
+window.onDelLoc = onDelLoc
+// window.onDelLoc = onDelLoc
 
 function onInit() {
     mapService.initMap()
@@ -33,7 +35,7 @@ function onInit() {
         .catch(() => console.log('Error: cannot init map'));
 }
 
-    
+
 // This function provides a Promise API to the callback-based-api of getCurrentPosition
 function getPosition() {
     console.log('Getting Pos');
@@ -54,8 +56,14 @@ function onGetLocs() {
     locService.getLocs()
         .then(locs => {
             console.log('Locations:', locs)
-            document.querySelector('.locs').innerText = JSON.stringify(locs)
+            // console.log('Locations:', locs[0].name)
+
+            renderLocs(locs)
+            // document.querySelector('.locs').innerText = JSON.stringify(locs)
         })
+}
+function onDelLoc() {
+    locService.delLoc()
 }
 
 function onGetUserPos() {
@@ -70,9 +78,10 @@ function onGetUserPos() {
         })
 }
 
-function onPanTo() {
+function onPanTo(lat=35.6895,lng=139.6917) {
     console.log('Panning the Map');
-    mapService.panTo(35.6895, 139.6917);
+    mapService.panTo(lat, lng);
+    // mapService.panTo(35.6895, 139.6917);
 }
 
 
@@ -84,8 +93,24 @@ function render(obj) {
 }
 
 function getObjData() {
-//     return storageService.load('user-data')
-// }
+    //     return storageService.load('user-data')
+    // }
     var obj = storageService.load('user-data')
     render(obj)
+}
+
+function renderLocs(locs) {
+    console.log('hi')
+    if (!locs.length) return
+    const elLocs = document.querySelector('.locs')
+    var strHTMLS = locs.map(loc => {
+        return `<h2>${loc.name}</h2>
+        <h3>lat:${loc.lat.toFixed(3)}</h3>
+        <h3>lng:${loc.lng.toFixed(3)}</h3>
+        <h3>creatAt:${loc.time}
+        <button onclick="onDelLoc(${loc.id})">x</button>
+        <button onclick="onPanTo(${loc.lat},${loc.lng})">go</button>`
+    })
+    elLocs.innerHTML = strHTMLS.join('')
+
 }
