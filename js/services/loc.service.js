@@ -1,4 +1,4 @@
-// import { storageService } from './services/storage.service.js'
+import { storageService } from './storage.service.js'
 export const locService = {
     getLocs,
     getLoc
@@ -16,9 +16,9 @@ function getLocs(pos) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(locs);
-            // storageService.save(DATA_DB,locs);
         }, 2000)
     });
+    
 }
 
 function getLoc(pos){ // **
@@ -26,3 +26,5 @@ function getLoc(pos){ // **
 }
 
 
+
+// storageService.save(DATA_DB,locs);
