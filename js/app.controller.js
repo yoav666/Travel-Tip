@@ -5,8 +5,15 @@ import {
     mapService
 } from './services/map.service.js'
 import {
+    storageService
+} from './services/storage.service.js'
+
+// export const appContriller = {
+//     getUser
+// }
+import{
     weatherService
-} from './services/weather.service.js'
+}from './services/weather.service.js'
 
 
 window.onload = onInit;
@@ -17,8 +24,9 @@ window.onGetUserPos = onGetUserPos;
 
 function onInit() {
     mapService.initMap()
-        .then(() => {
+        .then(res => {
             // mapService.clickMap()
+            console.log('res', res);
             // weatherService.getWeather()
             console.log('Map is ready');
         })
@@ -69,3 +77,14 @@ function onPanTo() {
 
 
 
+// getUser()
+render()
+
+function render() {
+    var obj = getObjData()
+    console.log(obj);
+}
+
+function getObjData() {
+    return storageService.load('user-data')
+}
