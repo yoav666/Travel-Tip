@@ -111,12 +111,14 @@ function renderLocs(locs) {
         return 
     }
     var strHTMLS = locs.map(loc => {
-        return `<h2>Location Name:${loc.name}</h2>
-        <h3>lat:${loc.lat.toFixed(3)}</h3>
-        <h3>lng:${loc.lng.toFixed(3)}</h3>
-        <h3>creatAt:${loc.time}</h3>
-        <button onclick="onDelLoc('${loc.id}')">x</button>
-        <button onclick="onPanTo(${loc.lat},${loc.lng})">go</button>`
+        return `<ul>
+        <li><h2>Location Name:${loc.name}</h2></li>
+        <li><h3>lat:${loc.lat.toFixed(3)}</h3></li>
+        <li><h3>lng:${loc.lng.toFixed(3)}</h3></li>
+        <li><h3>creatAt:${loc.time}</h3></li>
+        <li><button onclick="onDelLoc('${loc.id}')">x</button></li>
+        <li><button onclick="onPanTo(${loc.lat},${loc.lng})">go</button></li>
+        </ul>`
     })
     elLocs.innerHTML = strHTMLS.join('')
 
