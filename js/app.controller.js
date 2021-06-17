@@ -88,16 +88,16 @@ function onPanTo(lat=35.6895,lng=139.6917) {
 
 // getUser()
 
-function render(obj) {
-    console.log(obj);
-}
+// function render(obj) {
+//     console.log(obj);
+// }
 
-function getObjData() {
-    //     return storageService.load('user-data')
-    // }
-    var obj = storageService.load('user-data')
-    render(obj)
-}
+// function getObjData() {
+//     //     return storageService.load('user-data')
+//     // }
+//     var obj = storageService.load(DATA_DB)
+//     render(obj)
+// }
 
 function renderLocs(locs) {
     console.log('hi')
@@ -107,7 +107,7 @@ function renderLocs(locs) {
         return `<h2>${loc.name}</h2>
         <h3>lat:${loc.lat.toFixed(3)}</h3>
         <h3>lng:${loc.lng.toFixed(3)}</h3>
-        <h3>creatAt:${loc.time}
+        <h3>creatAt:${loc.time}</h3>
         <button onclick="onDelLoc(${loc.id})">x</button>
         <button onclick="onPanTo(${loc.lat},${loc.lng})">go</button>`
     })
