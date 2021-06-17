@@ -27,11 +27,12 @@ h6 {
 header{
     background-color: gray;
 }
-.layout{
+/* .layout{
     max-width: 350px;
 
-}
+} */
 header .header-container{
+    max-width: 980px;
     margin-inline: auto;
     margin-block-end:2em;
     display: flex;
@@ -70,8 +71,8 @@ input[name=search]{
 
 
 
-@media (min-width:400px){
+/* @media (min-width:400px){
     header .header-container{
     max-width: 980px;
     }
-}
+} */

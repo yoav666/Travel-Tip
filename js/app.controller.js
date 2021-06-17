@@ -111,7 +111,7 @@ function renderLocs(locs) {
         return 
     }
     var strHTMLS = locs.map(loc => {
-        return `<h2>${loc.name}</h2>
+        return `<h2>Location Name:${loc.name}</h2>
         <h3>lat:${loc.lat.toFixed(3)}</h3>
         <h3>lng:${loc.lng.toFixed(3)}</h3>
         <h3>creatAt:${loc.time}</h3>
