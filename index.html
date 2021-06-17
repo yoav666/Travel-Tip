@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <div class="header-container">
+        <div class="header-container layout">
             <h1>Travel T<span>i</span>p</h1>
             <form action=""> 
                 <input type="search" name="search" class="search-input" placeholder="put ur location">
@@ -18,15 +18,17 @@
             </form>
         </div>
     </header>
-    <div class="map" id="map" style="width: 500px; height: 500px;"></div>
-    <button onclick="onAddMarker()" class="btn btn-add-marker">Add Marker Speific Location</button>
-    <button onclick="onGetUserPos()" class="btn btn-user-pos">Get User Position</button>
-    <button onclick="onGetLocs()" class="btn btn-get-locs">Get Locations</button>
-    <button onclick="onPanTo()" class="btn btn-pan">Pan Map to Tokyo</button>
+    <main>
 
-    <p>You are at: <span class="user-pos"></span></p>
-    <div class="locs"></div>
-        <!-- <p>Locations: <span class="locs"></span></p> -->
+        <div class="map" id="map" style="width: 500px; height: 500px;"></div>
+        <button onclick="onAddMarker()" class="btn btn-add-marker">Add Marker Speific Location</button>
+        <button onclick="onGetUserPos()" class="btn btn-user-pos">Get User Position</button>
+        <button onclick="onGetLocs()" class="btn btn-get-locs">Get Locations</button>
+        <button onclick="onPanTo()" class="btn btn-pan">Pan Map to Tokyo</button>
+        
+        <p>You are at: <span class="user-pos"></span></p>
+        <div class="locs"></div>
+    </main>
 
 
 

@@ -64,6 +64,10 @@ function onGetLocs() {
 }
 function onDelLoc(id) {
     locService.delLoc(id)
+    .then(locs=>{
+
+        renderLocs(locs)
+    })
 }
 
 function onGetUserPos() {
@@ -100,15 +104,18 @@ function onPanTo(lat=35.6895,lng=139.6917) {
 // }
 
 function renderLocs(locs) {
-    console.log('hi')
-    if (!locs.length) return
     const elLocs = document.querySelector('.locs')
+    console.log('hi')
+    if (!locs.length){
+        elLocs.innerText='no locations'
+        return 
+    }
     var strHTMLS = locs.map(loc => {
         return `<h2>${loc.name}</h2>
         <h3>lat:${loc.lat.toFixed(3)}</h3>
         <h3>lng:${loc.lng.toFixed(3)}</h3>
         <h3>creatAt:${loc.time}</h3>
-        <button onclick="onDelLoc(${loc.id})">x</button>
+        <button onclick="onDelLoc('${loc.id}')">x</button>
         <button onclick="onPanTo(${loc.lat},${loc.lng})">go</button>`
     })
     elLocs.innerHTML = strHTMLS.join('')

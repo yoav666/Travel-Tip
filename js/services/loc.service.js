@@ -79,5 +79,12 @@ function getUser(userDatas) {
 
 function delLoc(id){
     console.log('hi im here',id)
-    // locs.findIndex(id)
+    var idx =locs.findIndex(loc=>{
+        return loc.id===id})
+        console.log(idx)
+        locs.splice(idx,1)
+        console.log(locs)
+        storageService.save(DATA_DB, locs)
+       return Promise.resolve(locs)
+        
 }
